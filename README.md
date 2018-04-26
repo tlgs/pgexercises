@@ -1,12 +1,12 @@
 # pgexercises
 
-Solutions to the exercises found on [PostgreSQL Exercises](https://pgexercises.com/).
+Solutions to the exercises found on [PostgreSQL Exercises](https://pgexercises.com/) (made by [Alisdair Owens](https://www.zaltys.net/)).
 
-PostgreSQL Exercises was made by [Alisdair Owens](https://www.zaltys.net/).
+Progress: 
 
 - [X] Basic
 - [X] Joins and Subqueries
-- [ ] Modifying Data
+- [X] Modifying Data
 - [ ] Aggregates
 - [ ] Date
 - [ ] String
