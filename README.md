@@ -10,4 +10,4 @@ Progress:
 - [X] Aggregates
 - [X] Date
 - [X] String
-- [ ] Recursive
+- [X] Recursive
