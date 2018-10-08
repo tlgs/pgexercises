@@ -1,3 +1,3 @@
 SELECT COUNT(*)
-	FROM cd.facilities
-	WHERE guestcost >= 10;
+  FROM cd.facilities
+ WHERE guestcost >= 10;

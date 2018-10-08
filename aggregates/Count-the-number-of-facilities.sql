@@ -1,2 +1,2 @@
 SELECT COUNT(*)
-	FROM cd.facilities;
+  FROM cd.facilities;
