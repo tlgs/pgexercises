@@ -1,3 +1,3 @@
 SELECT * 
-	FROM cd.facilities
-	WHERE name LIKE '%Tennis%';
+  FROM cd.facilities
+ WHERE name LIKE '%Tennis%';

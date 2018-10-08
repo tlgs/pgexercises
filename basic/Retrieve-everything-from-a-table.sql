@@ -1,2 +1,2 @@
-SELECT * 
-	FROM cd.facilities;
+SELECT *
+  FROM cd.facilities;
