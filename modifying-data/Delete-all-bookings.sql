@@ -1,1 +1,2 @@
-DELETE FROM cd.bookings;
+DELETE
+  FROM cd.bookings;

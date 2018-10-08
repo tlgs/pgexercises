@@ -1,2 +1,3 @@
-DELETE FROM cd.members
-	WHERE memid = 37;	
+DELETE
+  FROM cd.members
+ WHERE memid = 37;
