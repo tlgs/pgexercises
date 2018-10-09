@@ -11,3 +11,5 @@ Progress:
 - [X] Date
 - [X] String
 - [X] Recursive
+
+The project was updated to conform to [Simon Holywell's SQL Style Guide](https://www.sqlstyle.guide/).
