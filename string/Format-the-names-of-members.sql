@@ -1,2 +1,2 @@
 SELECT surname || ', ' || firstname AS name
-	FROM cd.members
+  FROM cd.members;
