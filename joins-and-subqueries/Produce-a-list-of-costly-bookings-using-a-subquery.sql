@@ -10,6 +10,6 @@ SELECT member, facility, cost
                ON book.memid = mem.memid
                INNER JOIN cd.facilities AS fac
                ON fac.facid = book.facid
-               WHERE book.starttime BETWEEN '2012-09-14' AND '2012-09-15') AS sub
+         WHERE book.starttime BETWEEN '2012-09-14' AND '2012-09-15') AS sub
  WHERE cost > 30
  ORDER BY cost DESC;

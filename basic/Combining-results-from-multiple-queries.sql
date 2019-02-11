@@ -1,7 +1,7 @@
 SELECT surname
   FROM cd.members
 
-UNION
+ UNION
 
 SELECT name
   FROM cd.facilities;
