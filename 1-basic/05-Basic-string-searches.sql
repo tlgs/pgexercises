@@ -1,6 +1,3 @@
-SELECT
-  *
-FROM
-  cd.facilities
-WHERE
-  name LIKE '%Tennis%';
+SELECT *
+FROM cd.facilities
+WHERE name LIKE '%Tennis%';

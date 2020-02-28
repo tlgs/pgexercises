@@ -1,6 +1,3 @@
-SELECT
-  *
-FROM
-  cd.facilities
-WHERE
-  facid IN (1, 5);
+SELECT *
+FROM cd.facilities
+WHERE facid IN (1, 5);

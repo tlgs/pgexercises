@@ -1,4 +1,2 @@
-SELECT
-  MAX(joindate) AS latest
-FROM
-  cd.members;
+SELECT MAX(joindate) AS latest
+FROM cd.members;
