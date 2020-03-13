@@ -15,4 +15,4 @@ WITH booking_costs AS (
 SELECT "name", SUM("cost") AS revenue
 FROM booking_costs
 GROUP BY "name"
-ORDER BY "revenue";
+ORDER BY revenue;

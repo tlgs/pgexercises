@@ -4,7 +4,7 @@ WITH daily_totals AS (
     SUM(
       CASE bks.memid
         WHEN 0 THEN bks.slots * facs.guestcost
-	   ELSE bks.slots * facs.membercost
+	      ELSE bks.slots * facs.membercost
       END
     ) AS revenue
   FROM

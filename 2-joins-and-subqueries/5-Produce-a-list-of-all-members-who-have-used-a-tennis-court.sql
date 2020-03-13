@@ -1,5 +1,5 @@
 SELECT DISTINCT
-  mems.firstname || ' ' || mems.surname AS member,
+  (mems.firstname || ' ' || mems.surname) AS "member",
   facs.name AS facility
 FROM
   cd.members AS mems

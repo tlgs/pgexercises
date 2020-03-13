@@ -11,10 +11,10 @@ WITH RECURSIVE rec_chain(recommender) AS (
   SELECT
     mems.recommendedby AS recommender
   FROM
-    cd.members AS mems
-  INNER JOIN
     rec_chain AS recs
-      ON mems.memid = recs.recommender
+  INNER JOIN
+    cd.members AS mems
+      ON recs.recommender = mems.memid
 )
 
 SELECT

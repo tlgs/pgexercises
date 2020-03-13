@@ -1,5 +1,5 @@
 SELECT DISTINCT
-  mems.firstname || ' ' || mems.surname AS member,
+  (mems.firstname || ' ' || mems.surname) AS "member",
   (SELECT
      recs.firstname || ' ' || recs.surname AS recommender
    FROM
@@ -10,4 +10,4 @@ SELECT DISTINCT
 FROM
   cd.members AS mems
 ORDER BY
-  member;
+  "member";

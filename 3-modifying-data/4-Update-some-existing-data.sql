@@ -3,4 +3,4 @@ UPDATE
 SET
   initialoutlay = 10000
 WHERE
-  name = 'Tennis Court 2';
+  "name" = 'Tennis Court 2';
