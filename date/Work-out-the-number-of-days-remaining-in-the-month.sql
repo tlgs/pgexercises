@@ -1,2 +1,0 @@
-SELECT DATE_TRUNC('MONTH', test_ts::DATE + INTERVAL '1 MONTH') - test_ts::DATE AS remaining
-  FROM (SELECT TIMESTAMP '2012-02-11 01:00:00' AS test_ts) sub;
