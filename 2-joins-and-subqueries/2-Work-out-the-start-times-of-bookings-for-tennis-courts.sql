@@ -1,5 +1,5 @@
 SELECT
-  bks.starttime,
+  bks.starttime AS "start",
   facs.name
 FROM
   cd.bookings AS bks

@@ -1,4 +1,4 @@
-WITH RECURSIVE rec_chain(member, recommender) AS (
+WITH RECURSIVE rec_chain("member", recommender) AS (
   SELECT
     memid AS "member",
     recommendedby AS recommender
