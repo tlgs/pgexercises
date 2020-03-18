@@ -19,7 +19,9 @@ for c in "${CATEGORIES[@]}"; do
   } > /dev/null
 
   # shellcheck disable=SC2181
-  if [ $? -ne 0 ]; then
-    tput setaf 1; echo -n 'ERROR:'; tput sgr0; echo " $c"
+  if [ $? -eq 0 ]; then
+    tput setaf 2; echo -n 'OK:'; tput sgr0; echo " $c"
+  else
+    tput setaf 1; echo -n 'FAIL:'; tput sgr0; echo " $c"
   fi
 done
