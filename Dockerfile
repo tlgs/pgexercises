@@ -1,4 +1,6 @@
-FROM postgres:9.2
+FROM postgres:10.7
+
+ENV LANG C
 
 RUN apt-get update && \
     apt-get install -y curl && \
