@@ -11,6 +11,13 @@ Solutions to the problems over at [PostgreSQL Exercises](https://pgexercises.com
 Afterwards, `docker start/stop pgexercises` should be enough
 to get the container rolling.
 
+### Notes
+
+- The locale is set to `C`, as mentioned in the
+  [Getting Started](https://pgexercises.com/gettingstarted.html) section.
+- The Postgres server version is **10.7** (gotten by running `SELECT version()`),
+  which differs from the `clubdata.sql` dump version (9.2).
+
 ## Useful references
 
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/)
