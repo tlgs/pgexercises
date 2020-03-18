@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DIR=$(cd "$(dirname "$0")" && pwd)
+CATEGORIES=(
+  "1-basic"
+  "2-joins-and-subqueries"
+  # "3-modifying-data"
+  "4-aggregates"
+  "5-date"
+  "6-string"
+  "7-recursive"
+)
+
+for c in "${CATEGORIES[@]}"; do
+  {
+    cat "$DIR"/../"$c"/* |
+    psql -U postgres -h localhost -p 5432 -d exercises |
+    diff "$DIR/$c.txt" -
+  } > /dev/null
+
+  # shellcheck disable=SC2181
+  if [ $? -ne 0 ]; then
+    tput setaf 1; echo -n 'ERROR:'; tput sgr0; echo " $c"
+  fi
+done
