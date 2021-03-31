@@ -14,14 +14,20 @@ CATEGORIES=(
 for c in "${CATEGORIES[@]}"; do
   {
     cat "$DIR"/../"$c"/* |
-    psql -U postgres -h localhost -p 5432 -d exercises |
-    diff "$DIR/$c.txt" -
-  } > /dev/null
+      psql -U postgres -h localhost -p 5432 -d exercises |
+      diff "$DIR/$c.txt" -
+  } >/dev/null
 
   # shellcheck disable=SC2181
   if [ $? -eq 0 ]; then
-    tput setaf 2; echo -n 'OK:'; tput sgr0; echo " $c"
+    tput setaf 2
+    echo -n 'OK:'
+    tput sgr0
+    echo " $c"
   else
-    tput setaf 1; echo -n 'FAIL:'; tput sgr0; echo " $c"
+    tput setaf 1
+    echo -n 'FAIL:'
+    tput sgr0
+    echo " $c"
   fi
 done
