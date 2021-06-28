@@ -7,7 +7,7 @@ FROM
   cd.members AS mems
 LEFT OUTER JOIN
   cd.members AS recs
-    ON mems.recommendedby = recs.memid
+  ON mems.recommendedby = recs.memid
 ORDER BY
   memsname,
   memfname;

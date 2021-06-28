@@ -1,13 +1,13 @@
 SELECT DISTINCT
-  (mems.firstname || ' ' || mems.surname) AS "member",
+  mems.firstname || ' ' || mems.surname AS "member",
   (SELECT
-     recs.firstname || ' ' || recs.surname AS recommender
-   FROM
-     cd.members AS recs
-   WHERE
-     mems.recommendedby = recs.memid
-  )
+      recs.firstname || ' ' || recs.surname
+    FROM
+      cd.members AS recs
+    WHERE
+      mems.recommendedby = recs.memid
+  ) AS recommender
 FROM
   cd.members AS mems
 ORDER BY
-  "member";
+  "member";  -- noqa: L028

@@ -4,16 +4,16 @@ WITH booking_costs_2012_09_14 AS (
     facs.name AS facility,
     CASE mems.memid
       WHEN 0 THEN bks.slots * facs.guestcost
-      ELSE bks.slots * membercost
+      ELSE bks.slots * facs.membercost
     END AS "cost"
   FROM
     cd.members AS mems
   INNER JOIN
     cd.bookings AS bks
-      USING (memid)
+    ON mems.memid = bks.memid
   INNER JOIN
     cd.facilities AS facs
-      USING (facid)
+    ON bks.facid = facs.facid
   WHERE
     bks.starttime BETWEEN '2012-09-14' AND '2012-09-15'
 )

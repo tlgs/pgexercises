@@ -1,3 +1,3 @@
 SELECT surname FROM cd.members
-UNION
+UNION DISTINCT
 SELECT "name" FROM cd.facilities;
