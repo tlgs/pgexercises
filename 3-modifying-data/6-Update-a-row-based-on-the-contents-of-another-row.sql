@@ -1,3 +1,4 @@
+-- noqa: disable=PRS
 WITH tennis1 AS (
   SELECT *
   FROM cd.facilities
