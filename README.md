@@ -20,7 +20,7 @@ to get the container rolling.
 
 - The locale is set to `C`, as mentioned in the
   [Getting Started](https://pgexercises.com/gettingstarted.html) section.
-- The Postgres server version is **10.7** (`SELECT version();`),
+- The Postgres server version is **12.5** (`SELECT version();`),
   which differs from the `clubdata.sql` dump (9.2).
 
 ## Useful references

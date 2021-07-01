@@ -108,29 +108,29 @@
 -------------------+----------------
  Anne Baker        | Tennis Court 1
  Anne Baker        | Tennis Court 2
- Burton Tracy      | Tennis Court 2
  Burton Tracy      | Tennis Court 1
- Charles Owen      | Tennis Court 2
+ Burton Tracy      | Tennis Court 2
  Charles Owen      | Tennis Court 1
+ Charles Owen      | Tennis Court 2
  Darren Smith      | Tennis Court 2
  David Farrell     | Tennis Court 1
  David Farrell     | Tennis Court 2
- David Jones       | Tennis Court 2
  David Jones       | Tennis Court 1
+ David Jones       | Tennis Court 2
  David Pinker      | Tennis Court 1
  Douglas Jones     | Tennis Court 1
  Erica Crumpet     | Tennis Court 1
- Florence Bader    | Tennis Court 2
  Florence Bader    | Tennis Court 1
- GUEST GUEST       | Tennis Court 2
+ Florence Bader    | Tennis Court 2
  GUEST GUEST       | Tennis Court 1
- Gerald Butters    | Tennis Court 2
+ GUEST GUEST       | Tennis Court 2
  Gerald Butters    | Tennis Court 1
+ Gerald Butters    | Tennis Court 2
  Henrietta Rumney  | Tennis Court 2
  Jack Smith        | Tennis Court 1
  Jack Smith        | Tennis Court 2
- Janice Joplette   | Tennis Court 2
  Janice Joplette   | Tennis Court 1
+ Janice Joplette   | Tennis Court 2
  Jemima Farrell    | Tennis Court 1
  Jemima Farrell    | Tennis Court 2
  Joan Coplin       | Tennis Court 1
@@ -144,12 +144,12 @@
  Ponder Stibbons   | Tennis Court 2
  Ramnaresh Sarwin  | Tennis Court 1
  Ramnaresh Sarwin  | Tennis Court 2
- Tim Boothe        | Tennis Court 2
  Tim Boothe        | Tennis Court 1
+ Tim Boothe        | Tennis Court 2
  Tim Rownam        | Tennis Court 1
  Tim Rownam        | Tennis Court 2
- Timothy Baker     | Tennis Court 2
  Timothy Baker     | Tennis Court 1
+ Timothy Baker     | Tennis Court 2
  Tracy Smith       | Tennis Court 1
  Tracy Smith       | Tennis Court 2
 (46 rows)

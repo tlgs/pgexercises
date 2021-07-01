@@ -12,4 +12,5 @@ INNER JOIN
 WHERE
   facs.name LIKE 'Tennis Court %'
 ORDER BY
-  "member";
+  "member",
+  facility;

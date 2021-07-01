@@ -1,6 +1,7 @@
-FROM postgres:10.7
+FROM postgres:12.5
 
 ENV LANG C
+ENV POSTGRES_HOST_AUTH_METHOD trust
 
 RUN apt-get update && \
     apt-get install -y curl && \
