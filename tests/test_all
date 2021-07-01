@@ -1,33 +1,28 @@
 #!/bin/bash
 
-DIR=$(cd "$(dirname "$0")" && pwd)
 CATEGORIES=(
   "1-basic"
   "2-joins-and-subqueries"
-  # "3-modifying-data"
   "4-aggregates"
   "5-date"
   "6-string"
   "7-recursive"
 )
 
+# <https://mywiki.wooledge.org/BashFAQ/028>
+cd "${BASH_SOURCE%/*}/" || exit
+
 for c in "${CATEGORIES[@]}"; do
   {
-    cat "$DIR"/../"$c"/* |
+    cat "../$c"/* |
       psql -U postgres -h localhost -p 5432 -d exercises |
-      diff "$DIR/$c.txt" -
+      diff "$c.txt" -
   } >/dev/null
 
   # shellcheck disable=SC2181
   if [ $? -eq 0 ]; then
-    tput setaf 2
-    echo -n 'OK:'
-    tput sgr0
-    echo " $c"
+    echo "$(tput setaf 2)OK:$(tput sgr0) $c"
   else
-    tput setaf 1
-    echo -n 'FAIL:'
-    tput sgr0
-    echo " $c"
+    echo "$(tput setaf 1)FAIL:$(tput sgr0) $c"
   fi
 done
