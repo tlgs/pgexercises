@@ -7,7 +7,7 @@ FROM
   cd.members AS mems
 INNER JOIN
   cd.bookings AS bks
-    USING (memid)
+  ON mems.memid = bks.memid
 WHERE
   bks.starttime >= '2012-09-01'
 GROUP BY

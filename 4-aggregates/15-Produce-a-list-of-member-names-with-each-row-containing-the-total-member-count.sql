@@ -1,3 +1,4 @@
+-- noqa: disable=all
 SELECT
   COUNT(*) OVER(),
   firstname,

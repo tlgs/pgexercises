@@ -1,5 +1,5 @@
 SELECT
-  ROW_NUMBER() OVER(ORDER BY joindate),
+  ROW_NUMBER() OVER(ORDER BY joindate) AS "row_number",
   firstname,
   surname
 FROM

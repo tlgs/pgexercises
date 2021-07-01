@@ -9,6 +9,10 @@ WITH ranked_slots AS (
     facid
 )
 
-SELECT facid, total
-FROM ranked_slots
-WHERE "rank" = 1;
+SELECT
+  facid,
+  total
+FROM
+  ranked_slots
+WHERE
+  "rank" = 1;

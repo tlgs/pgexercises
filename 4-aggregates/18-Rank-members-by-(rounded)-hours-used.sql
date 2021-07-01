@@ -7,7 +7,7 @@ WITH hours_booked AS (
     cd.members AS mems
   INNER JOIN
     cd.bookings AS bks
-      USING (memid)
+    ON mems.memid = bks.memid
   GROUP BY
     mems.memid
 )
