@@ -1,28 +1,32 @@
 #!/bin/bash
 
 CATEGORIES=(
-  "1-basic"
-  "2-joins-and-subqueries"
-  "4-aggregates"
-  "5-date"
-  "6-string"
-  "7-recursive"
+  '1-basic'
+  '2-joins-and-subqueries'
+  '3-modifying-data'
+  '4-aggregates'
+  '5-date'
+  '6-string'
+  '7-recursive'
 )
 
 # <https://mywiki.wooledge.org/BashFAQ/028>
 cd "${BASH_SOURCE%/*}/" || exit
 
+N=${#CATEGORIES[@]}
 for c in "${CATEGORIES[@]}"; do
-  {
-    cat "../$c"/* |
-      psql -U postgres -h localhost -p 5432 -d exercises |
-      diff "$c.txt" -
-  } >/dev/null
-
-  # shellcheck disable=SC2181
-  if [ $? -eq 0 ]; then
-    echo "$(tput setaf 2)OK:$(tput sgr0) $c"
+  if [ "$c" == '3-modifying-data' ]; then
+    res='SKIP'
   else
-    echo "$(tput setaf 1)FAIL:$(tput sgr0) $c"
+    {
+      cat "../$c"/* |
+        psql -U postgres -h localhost -p 5432 -d exercises |
+        diff "$c.txt" -
+    } >/dev/null
+
+    # shellcheck disable=SC2181
+    [ $? -eq 0 ] && res='PASS' || res='FAIL'
   fi
+
+  printf "[%d/%d] %-20s %s\n" "${c:0:1}" "$N" "$(echo "${c:2}" | tr '-' ' ')" "$res"
 done

@@ -4,10 +4,9 @@ Solutions to the problems over at [PostgreSQL Exercises](https://pgexercises.com
 
 ## Testing environment
 
-This project includes a local testing environment enabled by
-[Docker](https://www.docker.com/)
-and a shell script that makes use of
-[psql](https://www.postgresql.org/docs/current/app-psql.html).
+A Dockerfile and a Bash script
+(+ [psql](https://www.postgresql.org/docs/current/app-psql.html))
+are included to test out the solutions:
 
 1. `docker build -t pgexercises .`
 2. `docker run --name pgexercises -p 5432:5432 -d pgexercises`
