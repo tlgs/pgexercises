@@ -7,7 +7,7 @@ WITH RECURSIVE rec_chain(recommender) AS (
     memid = 27
 
   UNION
-  
+
   SELECT
     mems.recommendedby AS recommender
   FROM

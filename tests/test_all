@@ -19,9 +19,9 @@ for c in "${CATEGORIES[@]}"; do
     res='SKIP'
   else
     {
-      cat "../$c"/* |
-        psql -U postgres -h localhost -p 5432 -d exercises |
-        diff "$c.txt" -
+      cat "../$c"/* \
+        | psql -U postgres -h localhost -p 5432 -d exercises \
+        | diff "$c.txt" -
     } >/dev/null
 
     # shellcheck disable=SC2181

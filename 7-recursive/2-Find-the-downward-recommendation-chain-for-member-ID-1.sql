@@ -5,9 +5,9 @@ WITH RECURSIVE rec_chain(memid) AS (
     cd.members
   WHERE
     recommendedby = 1
-  
+
   UNION ALL
-  
+
   SELECT
     mems.memid
   FROM

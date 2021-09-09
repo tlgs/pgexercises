@@ -6,7 +6,7 @@ WITH RECURSIVE rec_chain("member", recommender) AS (
     cd.members
 
   UNION
-  
+
   SELECT
     recs.member,
     mems.recommendedby AS recommender
