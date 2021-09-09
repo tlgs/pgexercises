@@ -5,9 +5,12 @@ repos:
   hooks:
     - id: check-added-large-files
     - id: end-of-file-fixer
-      exclude: tests/.+\.txt
     - id: trailing-whitespace
-      exclude: tests/.+\.txt
+
+- repo: https://github.com/hadolint/hadolint
+  rev: v2.7.0
+  hooks:
+    - id: hadolint
 
 - repo: https://github.com/koalaman/shellcheck-precommit
   rev: v0.7.2
@@ -24,3 +27,5 @@ repos:
       entry: shfmt
       args: [-w, -i=2, -ci, -bn]
       types: [shell]
+
+exclude: tests/.+\.txt
