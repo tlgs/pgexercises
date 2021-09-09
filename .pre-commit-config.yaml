@@ -1,31 +1,30 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-added-large-files
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
-  hooks:
-    - id: check-added-large-files
-    - id: end-of-file-fixer
-    - id: trailing-whitespace
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.7.0
+    hooks:
+      - id: hadolint
 
-- repo: https://github.com/hadolint/hadolint
-  rev: v2.7.0
-  hooks:
-    - id: hadolint
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.7.2
+    hooks:
+      - id: shellcheck
 
-- repo: https://github.com/koalaman/shellcheck-precommit
-  rev: v0.7.2
-  hooks:
-    - id: shellcheck
-
-- repo: local
-  hooks:
-    - id: shfmt
-      name: shfmt
-      minimum_pre_commit_version: 2.4.0
-      language: golang
-      additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.3.1]
-      entry: shfmt
-      args: [-w, -i=2, -ci, -bn]
-      types: [shell]
+  - repo: local
+    hooks:
+      - id: shfmt
+        name: shfmt
+        minimum_pre_commit_version: 2.4.0
+        language: golang
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.3.1]
+        entry: shfmt
+        args: [-w, -i=2, -ci, -bn]
+        types: [shell]
 
 exclude: tests/.+\.txt
