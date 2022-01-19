@@ -22,7 +22,7 @@ for c in "${CATEGORIES[@]}"; do
       cat "../$c"/* \
         | psql -U postgres -h localhost -p 5432 -d exercises \
         | diff "$c.txt" -
-    } >/dev/null
+    } > /dev/null
 
     # shellcheck disable=SC2181
     [ $? -eq 0 ] && res='PASS' || res='FAIL'
