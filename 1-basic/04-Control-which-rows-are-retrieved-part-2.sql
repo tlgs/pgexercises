@@ -1,6 +1,6 @@
 SELECT
   facid,
-  "name",
+  name,
   membercost,
   monthlymaintenance
 FROM

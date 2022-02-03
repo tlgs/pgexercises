@@ -1,5 +1,5 @@
 SELECT
-  "name",
+  name,
   membercost
 FROM
   cd.facilities;
