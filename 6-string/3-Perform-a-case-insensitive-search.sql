@@ -1,3 +1,3 @@
 SELECT *
 FROM cd.facilities
-WHERE "name" ILIKE 'tennis%';
+WHERE name ILIKE 'tennis%';
