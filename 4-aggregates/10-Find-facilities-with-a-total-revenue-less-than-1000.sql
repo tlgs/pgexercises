@@ -4,7 +4,7 @@ WITH booking_costs AS (
     CASE bks.memid
       WHEN 0 THEN bks.slots * facs.guestcost
       ELSE bks.slots * facs.membercost
-    END AS "cost"
+    END AS cost
   FROM
     cd.bookings AS bks
   INNER JOIN
@@ -13,13 +13,13 @@ WITH booking_costs AS (
 )
 
 SELECT
-  "name",
-  SUM("cost") AS revenue
+  name,
+  SUM(cost) AS revenue
 FROM
   booking_costs
 GROUP BY
-  "name"
+  name
 HAVING
-  SUM("cost") < 1000
+  SUM(cost) < 1000
 ORDER BY
   revenue;

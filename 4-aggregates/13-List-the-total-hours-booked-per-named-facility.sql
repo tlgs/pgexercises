@@ -1,7 +1,7 @@
 SELECT
   facs.facid,
   facs.name,
-  to_char(SUM(bks.slots) / 2.0, 'FM999D00') AS "Total Hours"  -- noqa: L030
+  to_char(SUM(bks.slots) / 2.0, 'FM999D00') AS "Total Hours"
 FROM
   cd.bookings AS bks
 INNER JOIN

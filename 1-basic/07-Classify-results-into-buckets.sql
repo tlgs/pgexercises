@@ -1,3 +1,5 @@
+-- noqa: disable=L039
+
 SELECT
   name,
   CASE

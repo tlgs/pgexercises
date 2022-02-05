@@ -2,16 +2,16 @@
 #
 # L028: References should be consistent in statements with a single table.
 # L029: Keywords should not be used as identifiers.
+# L030: Inconsistent capitalisation of function names.
 # L031: Avoid table aliases in from clauses and join conditions.
 # L034: Use wildcards then simple targets before calculations and aggregates in select statements.
 # L036: Select targets should be on a new line unless there is only one select target.
 # L044: Query produces an unknown number of result columns.
+# L057: Do not use special characters in identifiers.
 
 [sqlfluff]
 dialect = postgres
-exclude_rules = L028,L029,L031,L034,L036,L044
+exclude_rules = L028,L029,L030,L031,L034,L036,L044,L057
 
 [sqlfluff:rules]
 tab_space_size = 2
-
-# vim: ft=cfg

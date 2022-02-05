@@ -18,7 +18,7 @@ WITH daily_totals AS (
 
 rolling AS (
   SELECT
-    CAST(series."date" AS DATE) AS dt,
+    CAST(series.date AS DATE) AS dt,
     (
       AVG(daily_totals.revenue)
       OVER (ORDER BY daily_totals.dt ROWS 14 PRECEDING)
@@ -31,11 +31,11 @@ rolling AS (
     ) AS series
   LEFT OUTER JOIN
     daily_totals
-    ON series."date" = daily_totals.dt
+    ON series.date = daily_totals.dt
 )
 
 SELECT
-  dt AS "date",
+  dt AS date,
   revenue
 FROM
   rolling

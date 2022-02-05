@@ -1,10 +1,12 @@
+-- noqa: disable=L039
+
 WITH booking_costs AS (
   SELECT
     facs.name,
     CASE bks.memid
       WHEN 0 THEN bks.slots * facs.guestcost
       ELSE bks.slots * facs.membercost
-    END AS "cost"
+    END AS cost
   FROM
     cd.bookings AS bks
   INNER JOIN
@@ -13,8 +15,8 @@ WITH booking_costs AS (
 )
 
 SELECT
-  "name",
-  CASE NTILE(3) OVER (ORDER BY SUM("cost") DESC)
+  name,
+  CASE NTILE(3) OVER (ORDER BY SUM(cost) DESC)
     WHEN 1 THEN 'high'
     WHEN 2 THEN 'average'
     WHEN 3 THEN 'low'
@@ -22,7 +24,7 @@ SELECT
 FROM
   booking_costs
 GROUP BY
-  "name"
+  name
 ORDER BY
-  NTILE(3) OVER (ORDER BY SUM("cost") DESC),
-  "name";
+  NTILE(3) OVER (ORDER BY SUM(cost) DESC),
+  name;
