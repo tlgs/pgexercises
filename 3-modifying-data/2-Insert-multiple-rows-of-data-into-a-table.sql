@@ -1,4 +1,5 @@
 -- noqa: disable=L003
+
 INSERT INTO
   cd.facilities
 VALUES

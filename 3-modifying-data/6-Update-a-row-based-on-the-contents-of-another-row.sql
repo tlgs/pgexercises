@@ -1,8 +1,9 @@
--- noqa: disable=PRS
+-- noqa: disable=L003,L045
+
 WITH tennis1 AS (
   SELECT *
   FROM cd.facilities
-  WHERE "name" = 'Tennis Court 1'
+  WHERE name = 'Tennis Court 1'
 )
 
 UPDATE
