@@ -5,3 +5,8 @@ repos:
       - id: check-added-large-files
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 0.9.4
+    hooks:
+      - id: sqlfluff-lint

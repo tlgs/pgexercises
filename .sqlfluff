@@ -1,13 +1,11 @@
-# TODO: move this to a pre-commit hook!
-#
-# L028: References should be consistent in statements with a single table.
-# L030: Inconsistent capitalisation of function names.
-# L031: Avoid table aliases in from clauses and join conditions.
-# L034: Use wildcards then simple targets before calculations and aggregates in select statements.
-# L036: Select targets should be on a new line unless there is only one select target.
-# L044: Query produces an unknown number of result columns.
-# L057: Do not use special characters in identifiers.
-# L059: Unnecessary quoted identifier.
+# L028: Aliases in `GROUP BY` clauses
+# L030: `SUM` is a keyword, `to_char` is an identifier
+# L031:`schema_name.table_name.column_name` hinders readability
+# L034: Respect exercise column ordering
+# L036: Consistency with Mozilla's style guide
+# L044: Use `*`
+# L057: Names like `Total Slots`
+# L059: Quote keywords when used as column names
 
 [sqlfluff]
 dialect = postgres
