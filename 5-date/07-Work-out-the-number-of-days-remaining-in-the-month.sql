@@ -1,3 +1,5 @@
+-- noqa: disable=L025
+
 SELECT
   (date_trunc('month', ts + INTERVAL '1 month')) - DATE(ts) AS remaining
 FROM

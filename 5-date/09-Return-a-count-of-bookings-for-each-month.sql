@@ -1,9 +1,9 @@
 SELECT
-  date_trunc('month', starttime) AS "month",
-  COUNT(*)
+  date_trunc('month', starttime) AS month,
+  COUNT(*) AS count
 FROM
   cd.bookings
 GROUP BY
-  "month"
+  month
 ORDER BY
-  "month";
+  month;
