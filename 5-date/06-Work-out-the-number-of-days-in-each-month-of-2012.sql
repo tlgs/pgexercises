@@ -1,7 +1,7 @@
 -- noqa: disable=L025
 
 SELECT
-  EXTRACT(MONTH FROM gen) AS month,
+  EXTRACT(MONTH FROM gen) AS "month",
   ((gen + INTERVAL '1 month') - gen) AS length
 FROM
   generate_series(

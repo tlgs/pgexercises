@@ -14,10 +14,10 @@ WITH hours_booked AS (
 
 SELECT
   *,
-  RANK() OVER (ORDER BY hours DESC) AS rank
+  RANK() OVER (ORDER BY hours DESC) AS "rank"
 FROM
   hours_booked
 ORDER BY
-  rank,
+  "rank",
   surname,
   firstname;

@@ -2,7 +2,7 @@ WITH ranked_slots AS (
   SELECT
     facid,
     SUM(slots) AS total,
-    RANK() OVER (ORDER BY SUM(slots) DESC) AS rank
+    RANK() OVER (ORDER BY SUM(slots) DESC) AS cte_rank
   FROM
     cd.bookings
   GROUP BY
@@ -15,4 +15,4 @@ SELECT
 FROM
   ranked_slots
 WHERE
-  rank = 1;
+  cte_rank = 1;

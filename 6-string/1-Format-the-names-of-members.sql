@@ -1,4 +1,2 @@
-SELECT
-  (surname || ', ' || firstname) AS name
-FROM
-  cd.members;
+SELECT (surname || ', ' || firstname) AS "name"
+FROM cd.members;

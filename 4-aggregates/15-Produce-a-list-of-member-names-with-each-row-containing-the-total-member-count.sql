@@ -1,6 +1,5 @@
--- noqa: disable=all
 SELECT
-  COUNT(*) OVER(),
+  COUNT(*) OVER() AS "count",
   firstname,
   surname
 FROM

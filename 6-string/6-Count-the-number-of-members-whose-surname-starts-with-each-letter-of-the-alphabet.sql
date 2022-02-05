@@ -1,6 +1,6 @@
 SELECT
   LEFT(surname, 1) AS letter,
-  COUNT(*) AS count
+  COUNT(*) AS "count"
 FROM
   cd.members
 GROUP BY

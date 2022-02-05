@@ -4,7 +4,7 @@ WITH booking_costs AS (
     CASE bks.memid
       WHEN 0 THEN bks.slots * facs.guestcost
       ELSE bks.slots * facs.membercost
-    END AS cost
+    END AS cte_cost
   FROM
     cd.bookings AS bks
   INNER JOIN
@@ -13,12 +13,13 @@ WITH booking_costs AS (
 )
 
 SELECT
-  name,
-  RANK() OVER (ORDER BY SUM(cost) DESC) AS rank
+  "name",
+  RANK() OVER (ORDER BY SUM(cte_cost) DESC) AS "rank"
 FROM
   booking_costs
 GROUP BY
-  name
+  "name"
 ORDER BY
-  rank
-LIMIT 3;
+  "rank"
+LIMIT
+  3;

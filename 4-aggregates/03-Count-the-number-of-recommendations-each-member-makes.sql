@@ -1,6 +1,6 @@
 SELECT
   recommendedby,
-  COUNT(DISTINCT memid) AS count
+  COUNT(DISTINCT memid) AS "count"
 FROM
   cd.members
 WHERE

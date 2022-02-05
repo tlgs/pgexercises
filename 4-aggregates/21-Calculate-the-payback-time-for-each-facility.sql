@@ -6,7 +6,7 @@ WITH booking_costs AS (
     CASE bks.memid
       WHEN 0 THEN bks.slots * facs.guestcost
       ELSE bks.slots * facs.membercost
-    END AS cost
+    END AS cte_cost
   FROM
     cd.bookings AS bks
   INNER JOIN
@@ -15,13 +15,13 @@ WITH booking_costs AS (
 )
 
 SELECT
-  name,
-  initialoutlay / (SUM(cost) / 3.0 - monthlymaintenance) AS months
+  "name",
+  initialoutlay / (SUM(cte_cost) / 3.0 - monthlymaintenance) AS months
 FROM
   booking_costs
 GROUP BY
-  name,
+  "name",
   initialoutlay,
   monthlymaintenance
 ORDER BY
-  name;
+  "name";

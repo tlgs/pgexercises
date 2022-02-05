@@ -3,7 +3,7 @@
 WITH monthly_bookings AS (
   SELECT
     facs.name,
-    date_trunc('month', bks.starttime) AS month,
+    date_trunc('month', bks.starttime) AS "month",
     EXTRACT(
       DAY FROM (
         date_trunc('month', bks.starttime)
@@ -19,17 +19,17 @@ WITH monthly_bookings AS (
     ON facs.facid = bks.facid
   GROUP BY
     facs.name,
-    month
+    "month"
 )
 
 SELECT
-  name,
-  month,
+  "name",
+  "month",
   CAST(
     (total_slots / (25 * month_length) * 100) AS NUMERIC(3, 1)
   ) AS utilisation
 FROM
   monthly_bookings
 ORDER BY
-  name,
-  month;
+  "name",
+  "month";

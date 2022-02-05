@@ -24,8 +24,8 @@ rolling AS (
       OVER (ORDER BY daily_totals.dt ROWS 14 PRECEDING)
     ) AS revenue
   FROM
-    generate_series(  -- noqa: L030
-      DATE '2012-07-18',  -- noqa: L014,PRS
+    generate_series(
+      DATE '2012-07-18',
       DATE '2012-08-31',
       '1 day'
     ) AS series
@@ -35,7 +35,7 @@ rolling AS (
 )
 
 SELECT
-  dt AS date,
+  dt AS "date",
   revenue
 FROM
   rolling

@@ -3,7 +3,7 @@
 WITH tennis1 AS (
   SELECT *
   FROM cd.facilities
-  WHERE name = 'Tennis Court 1'
+  WHERE "name" = 'Tennis Court 1'
 )
 
 UPDATE
