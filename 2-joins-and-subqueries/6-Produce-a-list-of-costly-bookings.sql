@@ -1,10 +1,10 @@
 SELECT
-  mems.firstname || ' ' || mems.surname AS "member",
+  mems.firstname || ' ' || mems.surname AS member,
   facs.name AS facility,
   CASE mems.memid
     WHEN 0 THEN bks.slots * facs.guestcost
     ELSE bks.slots * facs.membercost
-  END AS "cost"
+  END AS cost
 FROM
   cd.members AS mems
 INNER JOIN
@@ -22,4 +22,4 @@ WHERE
     END
   )
 ORDER BY
-  "cost" DESC;
+  cost DESC;

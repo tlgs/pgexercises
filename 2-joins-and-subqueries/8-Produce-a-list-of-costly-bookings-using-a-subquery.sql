@@ -1,11 +1,11 @@
 WITH booking_costs_2012_09_14 AS (
   SELECT
-    (mems.firstname || ' ' || mems.surname) AS "member",
+    (mems.firstname || ' ' || mems.surname) AS member,
     facs.name AS facility,
     CASE mems.memid
       WHEN 0 THEN bks.slots * facs.guestcost
       ELSE bks.slots * facs.membercost
-    END AS "cost"
+    END AS cost
   FROM
     cd.members AS mems
   INNER JOIN
@@ -20,5 +20,5 @@ WITH booking_costs_2012_09_14 AS (
 
 SELECT *
 FROM booking_costs_2012_09_14
-WHERE "cost" > 30
-ORDER BY "cost" DESC;
+WHERE cost > 30
+ORDER BY cost DESC;
