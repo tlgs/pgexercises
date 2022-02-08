@@ -4,8 +4,8 @@ import pytest
 from .data import PARAM_LIST
 
 
-@pytest.fixture()
-def db_cursor(scope="module"):
+@pytest.fixture(scope="module")
+def db_cursor():
     with psycopg.connect("dbname=exercises user=postgres") as conn:
         with conn.cursor() as cur:
             yield cur
