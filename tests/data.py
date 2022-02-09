@@ -5,17 +5,10 @@ import pytest
 fromisoformat = datetime.datetime.fromisoformat
 
 
-PARAM_LIST = [
+PARAMS = [
     pytest.param(
         "1-basic/01-Retrieve-everything-from-a-table.sql",
-        [
-            "facid",
-            "name",
-            "membercost",
-            "guestcost",
-            "initialoutlay",
-            "monthlymaintenance",
-        ],
+        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -27,7 +20,6 @@ PARAM_LIST = [
             (7, b"Snooker Table", 0, 5, 450, 15),
             (8, b"Pool Table", 0, 5, 400, 15),
         ],
-        id="1-basic/01-Retrieve-everything-from-a-table.sql",
     ),
     pytest.param(
         "1-basic/02-Retrieve-specific-columns-from-a-table.sql",
@@ -43,18 +35,10 @@ PARAM_LIST = [
             (b"Snooker Table", 0),
             (b"Pool Table", 0),
         ],
-        id="1-basic/02-Retrieve-specific-columns-from-a-table.sql",
     ),
     pytest.param(
         "1-basic/03-Control-which-rows-are-retrieved.sql",
-        [
-            "facid",
-            "name",
-            "membercost",
-            "guestcost",
-            "initialoutlay",
-            "monthlymaintenance",
-        ],
+        ["facid", " name", " membercost", " guestcost", " initialoutlay", " monthlymaintenance"],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -62,49 +46,25 @@ PARAM_LIST = [
             (5, b"Massage Room 2", 35, 80, 4000, 3000),
             (6, b"Squash Court", 3.5, 17.5, 5000, 80),
         ],
-        id="1-basic/03-Control-which-rows-are-retrieved.sql",
     ),
     pytest.param(
         "1-basic/04-Control-which-rows-are-retrieved-part-2.sql",
         ["facid", "name", "membercost", "monthlymaintenance"],
-        [
-            (4, b"Massage Room 1", 35, 3000),
-            (5, b"Massage Room 2", 35, 3000),
-        ],
-        id="1-basic/04-Control-which-rows-are-retrieved-part-2.sql",
+        [(4, b"Massage Room 1", 35, 3000), (5, b"Massage Room 2", 35, 3000)],
     ),
     pytest.param(
         "1-basic/05-Basic-string-searches.sql",
-        [
-            "facid",
-            "name",
-            "membercost",
-            "guestcost",
-            "initialoutlay",
-            "monthlymaintenance",
-        ],
+        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
             (3, b"Table Tennis", 0, 5, 320, 10),
         ],
-        id="1-basic/05-Basic-string-searches.sql",
     ),
     pytest.param(
         "1-basic/06-Matching-against-multiple-possible-values.sql",
-        [
-            "facid",
-            "name",
-            "membercost",
-            "guestcost",
-            "initialoutlay",
-            "monthlymaintenance",
-        ],
-        [
-            (1, b"Tennis Court 2", 5, 25, 8000, 200),
-            (5, b"Massage Room 2", 35, 80, 4000, 3000),
-        ],
-        id="1-basic/06-Matching-against-multiple-possible-values.sql",
+        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [(1, b"Tennis Court 2", 5, 25, 8000, 200), (5, b"Massage Room 2", 35, 80, 4000, 3000)],
     ),
     pytest.param(
         "1-basic/07-Classify-results-into-buckets.sql",
@@ -120,49 +80,22 @@ PARAM_LIST = [
             (b"Snooker Table", b"cheap"),
             (b"Pool Table", b"cheap"),
         ],
-        id="1-basic/07-Classify-results-into-buckets.sql",
     ),
     pytest.param(
         "1-basic/08-Working-with-dates.sql",
         ["memid", "surname", "firstname", "joindate"],
         [
-            (
-                24,
-                b"Sarwin",
-                b"Ramnaresh",
-                fromisoformat("2012-09-01 08:44:42"),
-            ),
+            (24, b"Sarwin", b"Ramnaresh", fromisoformat("2012-09-01 08:44:42")),
             (26, b"Jones", b"Douglas", fromisoformat("2012-09-02 18:43:05")),
-            (
-                27,
-                b"Rumney",
-                b"Henrietta",
-                fromisoformat("2012-09-05 08:42:35"),
-            ),
+            (27, b"Rumney", b"Henrietta", fromisoformat("2012-09-05 08:42:35")),
             (28, b"Farrell", b"David", fromisoformat("2012-09-15 08:22:05")),
-            (
-                29,
-                b"Worthington-Smyth",
-                b"Henry",
-                fromisoformat("2012-09-17 12:27:15"),
-            ),
-            (
-                30,
-                b"Purview",
-                b"Millicent",
-                fromisoformat("2012-09-18 19:04:01"),
-            ),
-            (
-                33,
-                b"Tupperware",
-                b"Hyacinth",
-                fromisoformat("2012-09-18 19:32:05"),
-            ),
+            (29, b"Worthington-Smyth", b"Henry", fromisoformat("2012-09-17 12:27:15")),
+            (30, b"Purview", b"Millicent", fromisoformat("2012-09-18 19:04:01")),
+            (33, b"Tupperware", b"Hyacinth", fromisoformat("2012-09-18 19:32:05")),
             (35, b"Hunt", b"John", fromisoformat("2012-09-19 11:32:45")),
             (36, b"Crumpet", b"Erica", fromisoformat("2012-09-22 08:36:38")),
             (37, b"Smith", b"Darren", fromisoformat("2012-09-26 18:08:45")),
         ],
-        id="1-basic/08-Working-with-dates.sql",
     ),
     pytest.param(
         "1-basic/09-Removing-duplicates-and-ordering-results.sql",
@@ -179,7 +112,6 @@ PARAM_LIST = [
             (b"GUEST",),
             (b"Genting",),
         ],
-        id="1-basic/09-Removing-duplicates-and-ordering-results.sql",
     ),
     pytest.param(
         "1-basic/10-Combining-results-from-multiple-queries.sql",
@@ -220,19 +152,16 @@ PARAM_LIST = [
             (b"Bader",),
             (b"Massage Room 1",),
         ],
-        id="1-basic/10-Combining-results-from-multiple-queries.sql",
     ),
     pytest.param(
         "1-basic/11-Simple-aggregation.sql",
         ["latest"],
         [(fromisoformat("2012-09-26 18:08:45"),)],
-        id="1-basic/11-Simple-aggregation.sql",
     ),
     pytest.param(
         "1-basic/12-More-aggregation.sql",
         ["firstname", "surname", "joindate"],
         [(b"Darren", b"Smith", fromisoformat("2012-09-26 18:08:45"))],
-        id="1-basic/12-More-aggregation.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/1-Retrieve-the-start-times-of-members-bookings.sql",
@@ -273,7 +202,6 @@ PARAM_LIST = [
             (fromisoformat("2012-09-29 17:30:00"),),
             (fromisoformat("2012-09-30 14:30:00"),),
         ],
-        id="2-joins-and-subqueries/1-Retrieve-the-start-times-of-members-bookings.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/2-Work-out-the-start-times-of-bookings-for-tennis-courts.sql",
@@ -292,7 +220,6 @@ PARAM_LIST = [
             (fromisoformat("2012-09-21 17:00:00"), b"Tennis Court 1"),
             (fromisoformat("2012-09-21 18:00:00"), b"Tennis Court 2"),
         ],
-        id="2-joins-and-subqueries/2-Work-out-the-start-times-of-bookings-for-tennis-courts.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/3-Produce-a-list-of-all-members-who-have-recommended-another-member.sql",
@@ -312,7 +239,6 @@ PARAM_LIST = [
             (b"Ponder", b"Stibbons"),
             (b"Burton", b"Tracy"),
         ],
-        id="2-joins-and-subqueries/3-Produce-a-list-of-all-members-who-have-recommended-another-member.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/3-Produce-a-list-of-all-members-who-have-recommended-another-member.sql",
@@ -332,7 +258,6 @@ PARAM_LIST = [
             (b"Ponder", b"Stibbons"),
             (b"Burton", b"Tracy"),
         ],
-        id="2-joins-and-subqueries/3-Produce-a-list-of-all-members-who-have-recommended-another-member.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/4-Produce-a-list-of-all-members-along-with-their-recommender.sql",
@@ -370,7 +295,6 @@ PARAM_LIST = [
             (b"Hyacinth", b"Tupperware", None, None),
             (b"Henry", b"Worthington-Smyth", b"Tracy", b"Smith"),
         ],
-        id="2-joins-and-subqueries/4-Produce-a-list-of-all-members-along-with-their-recommender.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/5-Produce-a-list-of-all-members-who-have-used-a-tennis-court.sql",
@@ -423,7 +347,6 @@ PARAM_LIST = [
             (b"Tracy Smith", b"Tennis Court 1"),
             (b"Tracy Smith", b"Tennis Court 2"),
         ],
-        id="2-joins-and-subqueries/5-Produce-a-list-of-all-members-who-have-used-a-tennis-court.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/6-Produce-a-list-of-costly-bookings.sql",
@@ -448,7 +371,6 @@ PARAM_LIST = [
             (b"GUEST GUEST", b"Squash Court", 35),
             (b"GUEST GUEST", b"Squash Court", 35),
         ],
-        id="2-joins-and-subqueries/6-Produce-a-list-of-costly-bookings.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/7-Produce-a-list-of-all-members-along-with-their-recommender-using-no-joins.sql",
@@ -485,7 +407,6 @@ PARAM_LIST = [
             (b"Timothy Baker", b"Jemima Farrell"),
             (b"Tracy Smith", None),
         ],
-        id="2-joins-and-subqueries/7-Produce-a-list-of-all-members-along-with-their-recommender-using-no-joins.sql",
     ),
     pytest.param(
         "2-joins-and-subqueries/8-Produce-a-list-of-costly-bookings-using-a-subquery.sql",
@@ -510,6 +431,5 @@ PARAM_LIST = [
             (b"GUEST GUEST", b"Squash Court", 35),
             (b"GUEST GUEST", b"Squash Court", 35),
         ],
-        id="2-joins-and-subqueries/8-Produce-a-list-of-costly-bookings-using-a-subquery.sql",
     ),
 ]
