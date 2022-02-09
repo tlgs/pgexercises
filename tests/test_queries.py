@@ -6,11 +6,15 @@ from .data import PARAMS
 
 @pytest.fixture(scope="module")
 def db_cursor():
-    with psycopg.connect("dbname=exercises user=postgres") as conn:
-        with conn.cursor() as cur:
-            yield cur
+    try:
+        with psycopg.connect("dbname=exercises user=postgres") as conn:
+            with conn.cursor() as cur:
+                yield cur
 
-    # automatic teardown
+        # automatic teardown
+
+    except psycopg.OperationalError:
+        pytest.exit("cannot reach database")
 
 
 @pytest.mark.parametrize(

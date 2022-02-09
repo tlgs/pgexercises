@@ -1,7 +1,7 @@
 SELECT
   facid,
   EXTRACT(MONTH FROM starttime) AS "month",
-  SUM(slots) AS "Total Slots"
+  SUM(slots) AS slots
 FROM
   cd.bookings
 WHERE
