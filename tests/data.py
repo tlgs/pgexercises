@@ -1126,4 +1126,39 @@ PARAMS = [
             (37, b"8225773541"),
         ],
     ),
+    pytest.param(
+        "7-recursive/1-Find-the-upward-recommendation-chain-for-member-ID-27.sql",
+        ["recommender", "firstname", "surname"],
+        [
+            (20, b"Matthew", b"Genting"),
+            (5, b"Gerald", b"Butters"),
+            (1, b"Darren", b"Smith"),
+        ],
+    ),
+    pytest.param(
+        "7-recursive/2-Find-the-downward-recommendation-chain-for-member-ID-1.sql",
+        ["memid", "firstname", "surname"],
+        [
+            (4, b"Janice", b"Joplette"),
+            (5, b"Gerald", b"Butters"),
+            (7, b"Nancy", b"Dare"),
+            (10, b"Charles", b"Owen"),
+            (11, b"David", b"Jones"),
+            (14, b"Jack", b"Smith"),
+            (20, b"Matthew", b"Genting"),
+            (21, b"Anna", b"Mackenzie"),
+            (26, b"Douglas", b"Jones"),
+            (27, b"Henrietta", b"Rumney"),
+        ],
+    ),
+    pytest.param(
+        "7-recursive/3-Produce-a-CTE-that-can-return-the-upward-recommendation-chain-for-any-member.sql",
+        ["member", "recommender", "firstname", "surname"],
+        [
+            (12, 9, b"Ponder", b"Stibbons"),
+            (12, 6, b"Burton", b"Tracy"),
+            (22, 16, b"Timothy", b"Baker"),
+            (22, 13, b"Jemima", b"Farrell"),
+        ],
+    ),
 ]
