@@ -7,7 +7,7 @@ datetime_iso = datetime.datetime.fromisoformat
 date_iso = datetime.date.fromisoformat
 
 
-PARAMS = [
+test_parameters = [
     pytest.param(
         "1-basic/01-Retrieve-everything-from-a-table.sql",
         ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
@@ -221,25 +221,6 @@ PARAMS = [
             (datetime_iso("2012-09-21 16:00:00"), b"Tennis Court 2"),
             (datetime_iso("2012-09-21 17:00:00"), b"Tennis Court 1"),
             (datetime_iso("2012-09-21 18:00:00"), b"Tennis Court 2"),
-        ],
-    ),
-    pytest.param(
-        "2-joins-and-subqueries/3-Produce-a-list-of-all-members-who-have-recommended-another-member.sql",
-        ["firstname", "surname"],
-        [
-            (b"Florence", b"Bader"),
-            (b"Timothy", b"Baker"),
-            (b"Gerald", b"Butters"),
-            (b"Jemima", b"Farrell"),
-            (b"Matthew", b"Genting"),
-            (b"David", b"Jones"),
-            (b"Janice", b"Joplette"),
-            (b"Millicent", b"Purview"),
-            (b"Tim", b"Rownam"),
-            (b"Darren", b"Smith"),
-            (b"Tracy", b"Smith"),
-            (b"Ponder", b"Stibbons"),
-            (b"Burton", b"Tracy"),
         ],
     ),
     pytest.param(

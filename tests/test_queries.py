@@ -1,7 +1,7 @@
 import psycopg
 import pytest
 
-from .data import PARAMS
+from data import test_parameters
 
 
 @pytest.fixture(scope="module")
@@ -19,8 +19,8 @@ def db_cursor():
 
 @pytest.mark.parametrize(
     "query_path, columns, values",
-    PARAMS,
-    ids=(p.values[0] for p in PARAMS),
+    test_parameters,
+    ids=(p.values[0] for p in test_parameters),
 )
 def test_query(db_cursor, query_path, columns, values):
     with open(f"solutions/{query_path}") as f:
