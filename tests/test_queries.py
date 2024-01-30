@@ -7,7 +7,7 @@ from .data import PARAMS
 @pytest.fixture(scope="module")
 def db_cursor():
     try:
-        with psycopg.connect("dbname=exercises user=postgres") as conn:
+        with psycopg.connect("host=localhost dbname=exercises user=postgres") as conn:
             with conn.cursor() as cur:
                 yield cur
 
