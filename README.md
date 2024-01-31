@@ -14,13 +14,6 @@ Powered by Docker, and [pytest](https://pytest.org) + [psycopg](https://psycopg.
 
 Afterwards, `docker start/stop pgexercises` should be enough to manage the container.
 
-### Some notes on the Docker image
-
-- The locale is set to `C`, as mentioned in
-  [Getting Started](https://pgexercises.com/gettingstarted.html).
-- The Postgres server version is 12.7 (`SELECT version();`),
-  which differs from the `clubdata.sql` dump (9.2).
-
 ## Style
 
 This project tries to be consistent with the
