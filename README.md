@@ -4,15 +4,13 @@ Solutions to the [PostgreSQL Exercises](https://pgexercises.com/).
 
 ## Tests
 
-A test environment and test set are available under `tests/`.
-Powered by Docker, and [pytest](https://pytest.org) + [psycopg](https://psycopg.org).
+A test environment and test set are available as a [Docker Compose stack](compose.yaml).
 
-1. `pip install pytest psycopg[binary]`
-2. `docker build -t pgexercises tests/`
-3. `docker run --name pgexercises -p 5432:5432 -d pgexercises`
-4. `pytest`
+Run tests with `docker compose up --attach runner`.
+Once done this will leave the database container running -
+avaiable on `localhost:5432`.
 
-Afterwards, `docker start/stop pgexercises` should be enough to manage the container.
+Run `docker compose down` when done.
 
 ## Style
 

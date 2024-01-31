@@ -1,0 +1,19 @@
+services:
+  database:
+    container_name: pgexercises-database
+    build:
+      dockerfile: misc/database.Dockerfile
+    ports:
+      - 5432:5432/tcp
+
+  runner:
+    container_name: pgexercises-runner
+    build:
+      dockerfile: misc/runner.Dockerfile
+    depends_on:
+      database:
+        condition: service_healthy
+
+networks:
+  default:
+    name: pgexercises-default
