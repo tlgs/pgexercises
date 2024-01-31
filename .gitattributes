@@ -1,3 +1,0 @@
-*.sql linguist-language=sql linguist-detectable
-
-tests/data.py -linguist-detectable
