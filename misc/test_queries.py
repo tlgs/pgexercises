@@ -11,7 +11,14 @@ date_iso = datetime.date.fromisoformat
 test_parameters = [
     pytest.param(
         "1-basic/01-Retrieve-everything-from-a-table.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -41,7 +48,14 @@ test_parameters = [
     ),
     pytest.param(
         "1-basic/03-Control-which-rows-are-retrieved.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -57,7 +71,14 @@ test_parameters = [
     ),
     pytest.param(
         "1-basic/05-Basic-string-searches.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -66,8 +87,18 @@ test_parameters = [
     ),
     pytest.param(
         "1-basic/06-Matching-against-multiple-possible-values.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
-        [(1, b"Tennis Court 2", 5, 25, 8000, 200), (5, b"Massage Room 2", 35, 80, 4000, 3000)],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
+        [
+            (1, b"Tennis Court 2", 5, 25, 8000, 200),
+            (5, b"Massage Room 2", 35, 80, 4000, 3000),
+        ],
     ),
     pytest.param(
         "1-basic/07-Classify-results-into-buckets.sql",
@@ -429,17 +460,51 @@ test_parameters = [
     pytest.param(
         "4-aggregates/03-Count-the-number-of-recommendations-each-member-makes.sql",
         ["recommendedby", "count"],
-        [(1, 5), (2, 3), (3, 1), (4, 2), (5, 1), (6, 1), (9, 2), (11, 1), (13, 2), (15, 1), (16, 1), (20, 1), (30, 1)],
+        [
+            (1, 5),
+            (2, 3),
+            (3, 1),
+            (4, 2),
+            (5, 1),
+            (6, 1),
+            (9, 2),
+            (11, 1),
+            (13, 2),
+            (15, 1),
+            (16, 1),
+            (20, 1),
+            (30, 1),
+        ],
     ),
     pytest.param(
         "4-aggregates/04-List-the-total-slots-booked-per-facility.sql",
         ["facid", "Total Slots"],
-        [(0, 1320), (1, 1278), (2, 1209), (3, 830), (4, 1404), (5, 228), (6, 1104), (7, 908), (8, 911)],
+        [
+            (0, 1320),
+            (1, 1278),
+            (2, 1209),
+            (3, 830),
+            (4, 1404),
+            (5, 228),
+            (6, 1104),
+            (7, 908),
+            (8, 911),
+        ],
     ),
     pytest.param(
         "4-aggregates/05-List-the-total-slots-booked-per-facility-in-a-given-month.sql",
         ["facid", "Total Slots"],
-        [(5, 122), (3, 422), (7, 426), (8, 471), (6, 540), (2, 570), (1, 588), (0, 591), (4, 648)],
+        [
+            (5, 122),
+            (3, 422),
+            (7, 426),
+            (8, 471),
+            (6, 540),
+            (2, 570),
+            (1, 588),
+            (0, 591),
+            (4, 648),
+        ],
     ),
     pytest.param(
         "4-aggregates/06-List-the-total-slots-booked-per-facility-per-month.sql",
@@ -969,7 +1034,14 @@ test_parameters = [
     ),
     pytest.param(
         "6-string/2-Find-facilities-by-a-name-prefix.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
@@ -977,7 +1049,14 @@ test_parameters = [
     ),
     pytest.param(
         "6-string/3-Perform-a-case-insensitive-search.sql",
-        ["facid", "name", "membercost", "guestcost", "initialoutlay", "monthlymaintenance"],
+        [
+            "facid",
+            "name",
+            "membercost",
+            "guestcost",
+            "initialoutlay",
+            "monthlymaintenance",
+        ],
         [
             (0, b"Tennis Court 1", 5, 25, 10000, 200),
             (1, b"Tennis Court 2", 5, 25, 8000, 200),
